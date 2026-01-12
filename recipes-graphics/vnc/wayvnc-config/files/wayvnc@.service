@@ -1,0 +1,15 @@
+[Unit]
+Description=WayVNC server for %i
+After=graphical.target weston.service
+Requires=weston.service
+
+[Service]
+User=%i
+Environment=WAYLAND_DISPLAY=wayland-0
+ExecStart=/usr/bin/wayvnc --config /etc/wayvnc/wayvnc.ini
+Restart=on-failure
+RuntimeDirectory=wayvnc
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target

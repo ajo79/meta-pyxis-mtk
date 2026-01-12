@@ -1,0 +1,16 @@
+BBPATH .= ":${LAYERDIR}"
+BBFILES += "${LAYERDIR}/recipes-*/*/*.bb ${LAYERDIR}/recipes-*/*/*.bbappend"
+BBFILES_DYNAMIC += "swupdate:${LAYERDIR}/dynamic-layers/meta-swupdate/recipes-*/*/*.bb \
+                     swupdate:${LAYERDIR}/dynamic-layers/meta-swupdate/recipes-*/*/*.bbappend"
+
+BBFILE_COLLECTIONS += "pn-mkt"
+BBFILE_PATTERN_pn-mkt = "^${LAYERDIR}/"
+BBFILE_PRIORITY_pn-mkt = "50"
+
+LAYERVERSION_pn-mkt = "4"
+LAYERSERIES_COMPAT_pn-mkt = "scarthgap"
+
+# This is used by the tegra-distro-sanity bbclass
+# to identify the distro layer directory during
+# bblayers checks.
+TD_DISTRO_LAYERDIR = "${LAYERDIR}"
