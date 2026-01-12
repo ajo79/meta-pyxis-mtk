@@ -1,2 +1,2 @@
 # meta-pyxis-mtk
-Mediatek demo distro by Pyxis. 
+Mediatek Genio 350 demo distro by Pyxis. 
